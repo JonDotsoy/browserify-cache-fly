@@ -1,0 +1,22 @@
+{
+  "name": "browsery-cache-fly",
+  "version": "0.0.1-algha.0",
+  "description": "Observe if exists changes in the files, if exists it this is transform.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Jonathan Delgado <hi@jon.soy>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/browsery-cache-fly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/browsery-cache-fly/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/browsery-cache-fly#readme",
+  "dependencies": {
+    "debug": "^2.4.4",
+    "through2": "^2.0.3"
+  }
+}
