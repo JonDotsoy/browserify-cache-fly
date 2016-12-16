@@ -11,10 +11,10 @@ Observe if exists changes in the files, if exists it this is transform.
 ```javascript
 const cacheFly = require('browsery-cache-fly')
 
-const bundler = browserify()
+const bundler = browserify({
+  transform: cacheFly(null, babelify)
+})
 bundler.add('./app.js')
-
-bundler.transform(cacheFly, {})
 // ...
 ```
 
