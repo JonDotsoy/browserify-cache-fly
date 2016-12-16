@@ -18,5 +18,5 @@ bundler.add('./app.js')
 // ...
 ```
 
-### [Docs](./dosc)
+### [Docs](./docs)
 - [API](./docs/API.md)
