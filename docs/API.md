@@ -1,5 +1,7 @@
 # API
+
 ## cacheFly(opts, [transforms])
+
 ### Arguments
 
 - **opts** *(Object|null)*: Options to cacheFly
