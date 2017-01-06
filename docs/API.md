@@ -1,10 +1,10 @@
 # API
 
-## cacheFly(opts, [transforms])
+## cacheFly(optsArg, [transforms])
 
 ### Arguments
 
-- **opts** *(Object|null)*: Options to cacheFly
+- **optsArg** *(Object|null)*: Options to cacheFly
 - **[transforms]** *(...[Transform][Browserify Transform])*: Transform source code before parsing it for `require()` calls with the transform function or module name `tr`.
 
 ### Returns

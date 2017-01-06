@@ -17,7 +17,7 @@ function skipTheTransform () {
 
 const mapFiles = new Map()
 
-function cacheFlyGenerator (opts, ..._transforms) {
+function cacheFlyGenerator (optsArg, ..._transforms) {
   const transforms = _transforms.map(e => [].concat(e))
 
   function startCacheFlyTransform (filePath, opts = {}) {
