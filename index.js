@@ -21,7 +21,10 @@ function cacheFlyGenerator (opts, ..._transforms) {
   const transforms = _transforms.map(e => [].concat(e))
 
   function startCacheFlyTransform (filePath, opts = {}) {
-    const hash = crypto.createHash('sha256').update(fs.readFileSync(filePath), 'ascii').digest().toString('hex')
+    const {mtime} = fs.statSync(filePath)
+
+    // const hash = crypto.createHash('sha256').update(fs.readFileSync(filePath), 'ascii').digest().toString('hex')
+    const hash = mtime.toJSON()
 
     log('check file ' + filePath)
 
@@ -31,11 +34,13 @@ function cacheFlyGenerator (opts, ..._transforms) {
 
       if (hash === stateFile.hash) {
         log(`File no changes`)
+
         mapFiles.set(filePath, Object.assign(stateFile, {
           state: NOCHANGES
         }))
       } else {
         log(`File with changes`)
+
         mapFiles.set(filePath, Object.assign(stateFile, {
           hash,
           state: WITHCHANGES
@@ -43,6 +48,7 @@ function cacheFlyGenerator (opts, ..._transforms) {
       }
     } else {
       log(`new map file "${filePath}"`)
+
       mapFiles.set(filePath, {
         hash,
         state: WITHCHANGES
@@ -60,6 +66,7 @@ function cacheFlyGenerator (opts, ..._transforms) {
 
       if (stateFile.state === NOCHANGES) {
         log(`Load file from cache "${filePath}"`)
+
         return through(function (buffer, encode, next) {
           this.push(stateFile.buffer)
 
@@ -91,6 +98,8 @@ function cacheFlyGenerator (opts, ..._transforms) {
           log(`No changes "${filePath}"`)
           return skipTheTransform()
         } else {
+          console.log('File update: ' + filePath)
+
           return transform(filePath, opts)
         }
       } else {
