@@ -1,6 +1,6 @@
 {
   "name": "browserify-cache-fly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A plugin to Browserify to Ignore the files when they have not been modified.",
   "main": "index.js",
   "scripts": {
@@ -16,12 +16,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonDotsoy/browsery-cache-fly.git"
+    "url": "git+https://github.com/JonDotsoy/browserify-cache-fly.git"
   },
   "bugs": {
-    "url": "https://github.com/JonDotsoy/browsery-cache-fly/issues"
+    "url": "https://github.com/JonDotsoy/browserify-cache-fly/issues"
   },
-  "homepage": "https://github.com/JonDotsoy/browsery-cache-fly#readme",
+  "homepage": "https://github.com/JonDotsoy/browserify-cache-fly#readme",
   "dependencies": {
     "debug": "^2.4.4",
     "through2": "^2.0.3"
