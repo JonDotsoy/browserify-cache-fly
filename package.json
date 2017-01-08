@@ -1,14 +1,16 @@
 {
-  "name": "browsery-cache-fly",
-  "version": "0.1.0-beta.0",
-  "description": "Observe if exists changes in the files, if exists it this is transform.",
+  "name": "browserify-cache-fly",
+  "version": "0.1.0",
+  "description": "A plugin to Browserify to Ignore the files when they have not been modified.",
   "main": "index.js",
   "scripts": {
     "postpublish": "sh -c \"git tag v$npm_package_version\"",
     "revertpublish": "sh -c \"git tag -d v$npm_package_version\""
   },
   "keywords": [
-    "transform"
+    "transform",
+    "browserify",
+    "browserify-plugin"
   ],
   "author": "Jonathan Delgado <hi@jon.soy>",
   "license": "MIT",

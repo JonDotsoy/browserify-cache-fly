@@ -1,3 +1,4 @@
-## 0.1.0-beta.0 - 2017-01-06
+## 0.1.0 - 2017-01-07
 ### Added
-- Store files changes
+- Support to Browserify.
+- Control Cache to store last change of the files.

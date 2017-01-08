@@ -1,15 +1,15 @@
-# browsery-cache-fly 📝✈️
+# browserify-cache-fly 📝✈️
 
-Observe if exists changes in the files, if exists it this is transform.
+A plugin to [Browserify][browserify] to Ignore the files when they have not been modified.
 
 ## How to Install
 
-    npm install --save-dev git@github.com:JonDotsoy/browsery-cache-fly.git
+    npm install --save-dev browserify-cache-fly
 
 ## How to Use
 
 ```javascript
-const cacheFly = require('browsery-cache-fly')
+const cacheFly = require('browserify-cache-fly')
 
 const bundler = browserify({
   transform: cacheFly(null, babelify)
@@ -20,3 +20,5 @@ bundler.add('./app.js')
 
 ### [Docs](./docs)
 - [API](./docs/API.md)
+
+[browserify]: https://github.com/substack/node-browserify "browser-side require() the node way"

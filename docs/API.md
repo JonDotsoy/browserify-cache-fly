@@ -1,6 +1,6 @@
 # API
 
-## cacheFly(optsArg, [transforms])
+## CacheFly(optsArg, [transforms])
 
 ### Arguments
 
@@ -14,7 +14,7 @@
 ### Example
 ```javascript
 const bundler = Browserify({
-  transform: cacheFly(null, [Babelify, {preset: ["es2015"]}])
+  transform: CacheFly(null, [Babelify, {preset: ["es2015"]}])
 })
 .bundle()
 ```

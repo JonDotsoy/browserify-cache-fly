@@ -1,8 +1,6 @@
 const through = require('through2')
 const fs = require('fs')
-const crypto = require('crypto')
-// require('debug').enable('cache-fly')
-const log = require('debug')('cache-fly')
+const log = require('debug')('BrowserifyCacheFly')
 
 const WITHCHANGES = 'WITH CHANGES'
 const NOCHANGES = 'NO CHANGES'
@@ -17,13 +15,12 @@ function skipTheTransform () {
 
 const mapFiles = new Map()
 
-function cacheFlyGenerator (optsArg, ..._transforms) {
+function CacheFlyGenerator (optsArg, ..._transforms) {
   const transforms = _transforms.map(e => [].concat(e))
 
   function startCacheFlyTransform (filePath, opts = {}) {
     const {mtime} = fs.statSync(filePath)
 
-    // const hash = crypto.createHash('sha256').update(fs.readFileSync(filePath), 'ascii').digest().toString('hex')
     const hash = mtime.toJSON()
 
     log('check file ' + filePath)
@@ -59,7 +56,6 @@ function cacheFlyGenerator (optsArg, ..._transforms) {
   }
 
   function finishCacheFlyTransform (filePath, opts = {}) {
-    // console.log(mapFiles)
 
     if (mapFiles.has(filePath)) {
       const stateFile = mapFiles.get(filePath)
@@ -115,4 +111,4 @@ function cacheFlyGenerator (optsArg, ..._transforms) {
   ]
 }
 
-exports = module.exports = cacheFlyGenerator
+exports = module.exports = CacheFlyGenerator
